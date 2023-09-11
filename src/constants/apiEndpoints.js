@@ -1,0 +1,1 @@
+export const VEHICLE_LIST = '/api/vehicles.json';

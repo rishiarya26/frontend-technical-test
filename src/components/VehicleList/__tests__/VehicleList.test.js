@@ -25,7 +25,40 @@ describe('<VehicleList /> Tests', () => {
   });
 
   it('Should show results if loading successfully finished', () => {
-    useData.mockReturnValue([false, false, 'results']);
+    const mockResults = [
+      {
+        "id": "xe",
+        "modelYear": "k17",
+        "apiUrl": "/api/vehicle_xe.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/xe_k17.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/xe_k17.jpg"
+            }
+        ],
+        "price": "£30,000",
+        "description": "The most advanced, efficient and refined sports saloon that Jaguar has ever produced",
+        "meta": {
+            "passengers": 5,
+            "drivetrain": [
+                "AWD",
+                "RWD"
+            ],
+            "bodystyles": [
+                "saloon"
+            ],
+            "emissions": {
+                "template": "CO2 Emissions $value g/km",
+                "value": 99
+            }
+        }
+    }
+  ]
+    useData.mockReturnValue([false, false, mockResults]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId('loading')).toBeNull();
