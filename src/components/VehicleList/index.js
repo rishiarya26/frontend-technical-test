@@ -2,7 +2,6 @@ import React from 'react';
 import useData from './useData';
 import './style.scss';
 import VehicleCard from '../VehicleCard';
-import Modal from '../Modal';
 
 export default function VehicleList() {
   // eslint-disable-next-line no-unused-vars
@@ -17,8 +16,8 @@ export default function VehicleList() {
   }
 
   return (
-    <div className='container' data-testid="results">
-      {vehicles.length > 0 && vehicles.map((vehicle) =>
+    <div className="container" data-testid="results">
+      {vehicles.length > 0 && vehicles.map((vehicle) => (
         <VehicleCard
           key={vehicle.id}
           name={vehicle.id}
@@ -31,7 +30,7 @@ export default function VehicleList() {
           seats={vehicle.meta.passengers}
           emissions={vehicle.meta.emissions.value}
         />
-      )}
+      ))}
     </div>
   );
 }

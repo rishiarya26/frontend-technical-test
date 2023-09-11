@@ -1,7 +1,7 @@
 @import "../../mixins.scss";
 
 .container {
-  @include media-query('tablet'){
+  @include media-query("tablet") {
     display: flex;
     flex-wrap: wrap;
   }

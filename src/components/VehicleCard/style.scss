@@ -1,107 +1,117 @@
-@import '../../mixins.scss';
+@import "../../mixins.scss";
+$border: .8px solid #e7e7e7;
+$font-small: 12px;
+$border-title: 2px solid #0c121c;
 
 .card {
-  border-bottom: 0.09375rem solid #eef1f1;
+  border-bottom: $border;
   display: flex;
   flex-direction: row;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow .3s ease;
   width: 100%;
-
+  
   &:hover {
     cursor: pointer;
   }
 
-  @include media-query('tablet'){
+  @include media-query("tablet") {
     flex-direction: column;
     width: 50%;
   }
 
-  @include media-query('desktop'){
+  @include media-query("desktop") {
     width: 25%;
   }
 }
 
 .card-image {
-    position: relative;
-    width: 22%;
+  position: relative;
+  width: 22%;
   
-    &__mobile {
-      height: 100%;
-      object-fit: cover;
-      width: 100%;
-    }
-  
-    @include media-query('tablet'){
-      height: 100%;
-      margin-right: 0;
-      width: 100%;
-    }
+  &__mobile {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
   }
-
-
-  .card-info {
-     display: flex; 
-     flex-direction: column;
-     justify-content: center;
-     width: 78%;
-     padding: 0 4% 0 4%;
   
-    &__title {
-    text-transform: uppercase;
+  @include media-query("tablet") {
+    height: 100%;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+
+.card-info {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4% 0 4%;
+  width: 78%;
+  
+  &__title {
     color: #323232;
     font-weight: bold;
-    }
+    text-transform: uppercase;
+  }
   
-    &__price {
-    padding: 1% 0 3% 0;
-    font-size: 12px;
+  &__price {
+    font-size: $font-small;
     letter-spacing: 1px;
+    padding: 1% 0 3% 0;
+  }
+  
+  &__desc {
+    font-size: $font-small;
+  }
+
+  &__readMore {
+    background-color: white;    
+    border: 0; 
+    color: #4a4f54;
+    cursor: pointer;;
+    font-size: $font-small;
+    text-align: left;
+    text-decoration: underline;
+  }
+  
+  @include media-query("tablet") {
+    border-left: $border;
+    border-right: $border;
+    display: block;
+    padding: 7% 4% 2% 4%;
+    text-align: center;
+    width: 100%;
+
+    &__title {
+      border: $border-title ;
+      border-style: solid none;
+      display: inline-flex;
+      padding: 2px;
+    }
+
+    &__price {
+      padding: 5% 0 3% 0;
     }
   
     &__desc {
-    font-size: 12px;
+      padding-top: 1%;
     }
 
     &__readMore {
-    text-decoration: underline;     
-    }
-  
-    @include media-query('tablet') {
-      border-left: 0.09375rem solid #eef1f1;
-      border-right: 0.09375rem solid #eef1f1;
-      display: block;
+      padding-top: 1%;  
       text-align: center;
-      width: 100%;
-      padding: 7% 4% 2% 4%;
-
-      &__title {
-        border: 2px solid #0c121c;
-        border-style: solid none;
-        display: inline-flex;
-        padding: 2px;
-      }
-
-      &__price {
-        padding: 5% 0 3% 0;
-      }
-  
-      &__desc {
-        padding-top: 1%;
-      }
-
-      &__readMore {
-        padding-top: 1%;  
-        }
     }
+  }
   
-    @include media-query('desktop') {
-     padding-bottom: 4%;
-    }
-  }  
+  @include media-query("desktop") {
+    padding-bottom: 4%;
+  }
+}  
 
- .line-clamp { 
-  overflow: hidden;
-  display: -webkit-box;
+.line-clamp {
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
- }
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  overflow: hidden;
+}

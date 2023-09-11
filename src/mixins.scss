@@ -2,11 +2,13 @@ $tablet-breakpoint: 480px;
 $desktop-breakpoint: 850px;
 
 @mixin media-query($breakpoint) {
-  @if $breakpoint == 'tablet' {
+  @if $breakpoint == "tablet" {
     @media (min-width: $tablet-breakpoint) {
       @content;
     }
-  } @else if $breakpoint == 'desktop' {
+  }
+
+  @else if $breakpoint == "desktop" {
     @media (min-width: $desktop-breakpoint) {
       @content;
     }
