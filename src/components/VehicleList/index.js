@@ -16,7 +16,7 @@ export default function VehicleList() {
   }
 
   return (
-    <div className="container" data-testid="results">
+    <main className="container" data-testid="results">
       {vehicles.length > 0 && vehicles.map((vehicle) => (
         <VehicleCard
           key={vehicle.id}
@@ -31,6 +31,6 @@ export default function VehicleList() {
           emissions={vehicle.meta.emissions.value}
         />
       ))}
-    </div>
+    </main>
   );
 }

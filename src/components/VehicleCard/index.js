@@ -20,7 +20,7 @@ const VehicleCard = ({
 
   return (
     <>
-      <div
+      <section
         className="card"
         onClick={show}
         data-testid="test-vehicle-card"
@@ -44,7 +44,7 @@ const VehicleCard = ({
           price={price}
           show={show}
         />
-      </div>
+      </section>
       <Modal
         name={name}
         price={price}
